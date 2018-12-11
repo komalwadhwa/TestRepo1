@@ -7,11 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import com.VW.qa.util.TestUtil;
 
 public class AddToCartPage {
-	/*
+	
 @FindBy(xpath="//a[@href='/smartphones/apple-iphone-xr/?sku=sku3190241']")
-	
 	WebElement iphoneXR;
-	
+/*
 	public AllSmartPhonesPage() {
 		PageFactory.initElements(driver,this);		
 	}
