@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import com.VW.qa.TestBase.TestBaseClass;
 
 public class HomePage 
-//extends TestBaseClass
 {
 	WebDriver driver;
 	
@@ -25,15 +24,10 @@ public class HomePage
 		PageFactory.initElements(driver,this);
 	}
 	
-	/*public AllSmartPhonesPage clickPhonesMenu() {
-		menuPhones.click();
-		return new AllSmartPhonesPage();
-	}
 	
-	*/
 	public void clickPhonesMenu() {
 		menuPhones.click();
-		//return new AllSmartPhonesPage();
+		
 	}
 	
 	
