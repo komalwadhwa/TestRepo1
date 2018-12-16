@@ -34,16 +34,12 @@ public class TestBaseClass {
 		prop = new Properties();	
 //		String path="//VWShopCartK//src//main//java/config1.properties";
 		String path= "C:\\Users\\komal\\eclipse-workspace\\VWShopCartClonedfromGit\\src\\main\\java\\config1.properties"; 
-		        //      C:\Users\komal\eclipse-workspace\VWShopCartClonedfromGit\src\main\java\config1.properties
-		
-		try {
-			//System.out.println("inside try and print path");	
+		   try {
 			
 			FileInputStream ip = new FileInputStream(path);
-			//System.out.println("inside try after and print path" + path);	
 			//this will read complete file inside the memory
-		    prop.load(ip);
-		   //System.out.println("print base url" + prop.getProperty("BaseURL"));
+		    	prop.load(ip);
+		  
 		} 		catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			 System.out.println("inside catch1");
@@ -111,32 +107,7 @@ public class TestBaseClass {
 	
 	}
 	
-	/*//create static method so it can be called globally
-		public void intialization(String strURL)
-		{
-			String browName=prop.getProperty("Browser"); //browName = "chrome";//
-			if (browName.equals("chrome"))
-			{
-				//path variable already set
-				System.setProperty("webdriver.chrome.driver", "c://Users//komal//workspace_personal//Selenium//chromeDriver//chromedriver.exe");
-				driver  = new ChromeDriver();
-			}
-			else if (browName.equals("firefox"))
-			 {System.setProperty("webdriver.gecko.driver", "/Users//komal//workspace_personal//Selenium//BrowserDrivers//geckodriver.exe");
-				driver = new FirefoxDriver();
-				}
-			
-			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-			driver.manage().deleteAllCookies();
-			
-			System.out.println("driver launched");
-			
-		 driver.get(strURL);
-		//	driver.get(TestUtil.BaseURL);
-		}
- */
+	
 	//todo put this in TestBaseClass @AfterSuite annotation and remove from here
 		@AfterSuite
 		public void tearDown() throws InterruptedException {
