@@ -17,7 +17,6 @@ public class AllSmartPhonesPage {
 
 	public AllSmartPhonesPage(WebDriver driver) {
 		this.driver=driver;
-	
 		//	"intailize elements in devices page");
 		PageFactory.initElements(driver,this);		
 	}
