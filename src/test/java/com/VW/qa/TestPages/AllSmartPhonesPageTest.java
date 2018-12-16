@@ -10,12 +10,6 @@ import com.VW.qa.pages.AllSmartPhonesPage;
 public class AllSmartPhonesPageTest extends TestBaseClass{
 	AllSmartPhonesPage SP;
 	
-	/*public AllSmartPhonesPageTest()
-	{//call TestBaseClass constructor
-	//	super();
-		}
-	*/
-	
 	@BeforeClass
 	public void intialize()
 	{
