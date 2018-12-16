@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [VWShopCartK]" parallel="tests">
-  <test thread-count="1" name="Firefox Test(failed)" parallel="tests">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [VWShopCartK]">
+  <test thread-count="1" name="Firefox Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.VW.qa.TestPages.ProductDetailPageTest">
+      <class name="com.VW.qa.TestPages.AllSmartPhonesPageTest">
         <methods>
+          <include name="intialize"/>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="clkAddToCart"/>
+          <include name="clickApple"/>
         </methods>
-      </class> <!-- com.VW.qa.TestPages.ProductDetailPageTest -->
+      </class> <!-- com.VW.qa.TestPages.AllSmartPhonesPageTest -->
+      <class name="com.VW.qa.TestPages.HomePageTest">
+        <methods>
+          <include name="setup"/>
+          <include name="intialize"/>
+          <include name="tearDown"/>
+          <include name="clickPhones"/>
+        </methods>
+      </class> <!-- com.VW.qa.TestPages.HomePageTest -->
     </classes>
   </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [VWShopCartK] -->

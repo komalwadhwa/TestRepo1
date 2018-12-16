@@ -9,14 +9,21 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Reporter;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
+import com.VW.qa.pages.HomePage;
 import com.VW.qa.util.TestUtil;
 
 public class TestBaseClass {
 
 	//use static vars so it can be used in child classes , and through out the project
 	public static WebDriver driver;
+	//protected HomePage homePg;
+	//protected AllSmartPhonesPage AllPhonesPg;
 	public static Properties prop;
 	
 	//check lecturer 158 and add code in below constructor and intialization() method below in @BeforeSuite annotation
@@ -26,7 +33,8 @@ public class TestBaseClass {
 		System.out.println("inside constructor TestBaseClass");
 		prop = new Properties();	
 //		String path="//VWShopCartK//src//main//java/config1.properties";
-		String path= "C:\\Users\\komal\\eclipse-workspace\\VWShopCartK\\src\\main\\java\\config1.properties";          
+		String path= "C:\\Users\\komal\\eclipse-workspace\\VWShopCartClonedfromGit\\src\\main\\java\\config1.properties"; 
+		        //      C:\Users\komal\eclipse-workspace\VWShopCartClonedfromGit\src\main\java\config1.properties
 		
 		try {
 			//System.out.println("inside try and print path");	
@@ -52,11 +60,33 @@ public class TestBaseClass {
 	}
 	
 	}
+
+	
+	@BeforeSuite(alwaysRun=true)
+	public void setup()
+	{
+		driver=	getDriverInstance("chrome");
+		//homePg= PageFactory.initElements(driver, HomePage.class);
+
+	}
+	
+	/* passing browser parameter does not work
+	 @Parameters({"browser"})
+	 @BeforeSuite(alwaysRun=true)
+	public void setup(String browser)
+	{
+		driver=	getDriverInstance(browser);
+		//homePg= PageFactory.initElements(driver, HomePage.class);
+
+	}
+	*/
 	
 	//create static method so it can be called globally
-	public void intialization()
+	public static WebDriver getDriverInstance(String browser)
 	{
-		String browName=prop.getProperty("Browser"); //browName = "chrome";//
+		WebDriver driver=null;
+		String browName= browser;
+				//prop.getProperty("Browser"); //browName = "chrome";//
 		if (browName.equals("chrome"))
 		{
 			//path variable already set
@@ -76,7 +106,9 @@ public class TestBaseClass {
 		System.out.println("driver launched");
 		
 	 driver.get(prop.getProperty("BaseURL"));
-	//	driver.get(TestUtil.BaseURL);
+	 System.out.println("-------------base url is: " + prop.getProperty("BaseURL"));
+	 return driver;
+	
 	}
 	
 	/*//create static method so it can be called globally
@@ -105,5 +137,12 @@ public class TestBaseClass {
 		//	driver.get(TestUtil.BaseURL);
 		}
  */
+	//todo put this in TestBaseClass @AfterSuite annotation and remove from here
+		@AfterSuite
+		public void tearDown() throws InterruptedException {
+	//	Thread.sleep(10000);	
+		
+		//driver.quit();
+		}
 	
 }

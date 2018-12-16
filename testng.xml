@@ -1,12 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="VWShopCartK" parallel="tests" thread-count="1">
+<suite name="VWShopCartK"  thread-count="1">
 <test name="Firefox Test">
 <parameter name="browser" value="chrome"></parameter>
 	<classes>
 		<class name="com.VW.qa.TestPages.HomePageTest"></class>
 		 <class name="com.VW.qa.TestPages.AllSmartPhonesPageTest"></class>
-		<class name="com.VW.qa.TestPages.ProductDetailPageTest"></class>
-	<!-- 	<class name="com.VW.qa.TestPages.AddToCartPageTest"></class>
+	<!-- 	<class name="com.VW.qa.TestPages.ProductDetailPageTest"></class>
+		<class name="com.VW.qa.TestPages.AddToCartPageTest"></class>
 		 
 		-->
 	</classes>

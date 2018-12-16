@@ -10,6 +10,7 @@ import com.VW.qa.TestBase.TestBaseClass;
 public class HomePage 
 //extends TestBaseClass
 {
+	WebDriver driver;
 	
 	//Page Factory OR
 	@FindBy(xpath="//span[contains(text(),'Phones')]")
@@ -20,7 +21,8 @@ public class HomePage
 	WebElement iphoneXR;
 	
 	public HomePage(WebDriver driver) {
-		PageFactory.initElements(driver,this);		
+		this.driver=driver;
+		PageFactory.initElements(driver,this);
 	}
 	
 	/*public AllSmartPhonesPage clickPhonesMenu() {
