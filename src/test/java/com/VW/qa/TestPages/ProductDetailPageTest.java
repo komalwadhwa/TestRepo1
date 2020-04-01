@@ -29,7 +29,7 @@ public class ProductDetailPageTest extends TestBaseClass{
 	@Test(priority=1)
 	public void clkRadioButton()  {
 		PD.clickRadioButton();
-		System.out.println("test april1");
+		System.out.println("test april1888222");
 		//return new 
 		
 	}
